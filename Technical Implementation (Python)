@@ -1,0 +1,13 @@
+import pandas as pd
+
+# Load and Merge
+trades = pd.read_csv('historical_data.csv')
+sentiment = pd.read_csv('fear_greed_index.csv')
+
+# Sync dates and merge
+trades['date'] = pd.to_datetime(trades['time'], unit='ms').dt.date
+df = pd.merge(trades, sentiment, left_on='date', right_on='timestamp')
+
+# Performance analysis
+summary = df.groupby('value_classification')['closedPnL'].agg(['mean', 'sum', 'count'])
+print(summary)
