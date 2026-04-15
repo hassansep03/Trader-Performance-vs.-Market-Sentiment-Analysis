@@ -28,5 +28,5 @@ The Greed Cap: Automated leverage restriction (Max 10x) when Sentiment > 75.
 
 Fear-Weighting: 20% increase in position sizing when Sentiment < 25.
 
-Conclusion:
+# Conclusion:
 This assignment demonstrates how sentiment-aware risk management can mitigate drawdowns during market euphoria and capitalize on high-probability opportunities during market panics.
